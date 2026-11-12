@@ -1,0 +1,1176 @@
+
+
+.servicehub-contact-premium {
+    --sh-primary: #3b3b98;
+    --sh-primary-dark: #2a2a72;
+    --sh-navy: #1a1a3e;
+    --sh-slate: #4a4a6a;
+    --sh-slate-light: #6b6b8a;
+    --sh-accent: #6c5ce7;
+    --sh-bg: #f7f8fc;
+    --sh-white: #ffffff;
+    --sh-border: #e8eaf2;
+    --sh-success: #00b894;
+    --sh-radius: 20px;
+    --sh-radius-sm: 14px;
+    --sh-shadow: 0 4px 24px rgba(26, 26, 62, 0.08);
+    --sh-shadow-lg: 0 20px 60px rgba(26, 26, 62, 0.14);
+    --sh-shadow-xl: 0 30px 80px rgba(26, 26, 62, 0.18);
+    --sh-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--sh-navy);
+    background: var(--sh-bg);
+    overflow-x: hidden;
+}
+
+/* Shared heading elements */
+.servicehub-contact-premium .section-eyebrow {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sh-accent);
+    margin-bottom: 14px;
+}
+.servicehub-contact-premium .block-title {
+    font-size: 2.125rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--sh-navy);
+    margin: 0 0 12px;
+}
+.servicehub-contact-premium .block-subtext {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--sh-slate-light);
+    margin: 0;
+    max-width: 560px;
+}
+.servicehub-contact-premium .section-heading-centered {
+    text-align: center;
+    margin-bottom: 52px;
+}
+.servicehub-contact-premium .section-heading-centered .block-subtext {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================================
+   SECTION 1 — HERO (FULL BG + CENTER CONTENT)
+   ============================================================ */
+.servicehub-contact-premium .hero-centered {
+    position: relative;
+    min-height: 670px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    isolation: isolate;
+    text-align: center;
+}
+
+.servicehub-contact-premium .hero-bg-image {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1920&q=85&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.05);
+    animation: heroSlowZoom 20s ease-out forwards;
+    z-index: 1;
+}
+@keyframes heroSlowZoom {
+    from { transform: scale(1.1); }
+    to   { transform: scale(1.05); }
+}
+
+.servicehub-contact-premium .hero-cinematic-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at center,
+            rgba(20, 20, 50, 0.55) 0%,
+            rgba(15, 15, 40, 0.72) 55%,
+            rgba(10, 10, 30, 0.85) 100%),
+        linear-gradient(180deg,
+            rgba(15, 15, 40, 0.55) 0%,
+            transparent 30%,
+            transparent 65%,
+            rgba(15, 15, 40, 0.75) 100%);
+    z-index: 2;
+}
+
+.servicehub-contact-premium .hero-content-wrap {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 100px 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.servicehub-contact-premium .hero-content {
+    max-width: 780px;
+    color: #fff;
+    animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.servicehub-contact-premium .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 10px 20px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 28px;
+    animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
+}
+.servicehub-contact-premium .eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #7ee0c2;
+    box-shadow: 0 0 0 4px rgba(126, 224, 194, 0.25);
+    animation: dotPulse 2.4s ease-in-out infinite;
+}
+@keyframes dotPulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(126, 224, 194, 0.25); }
+    50%      { box-shadow: 0 0 0 8px rgba(126, 224, 194, 0.05); }
+}
+
+.servicehub-contact-premium .hero-headline {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: #fff;
+    margin: 0 0 24px;
+    text-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
+    animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.16s both;
+}
+.servicehub-contact-premium .hero-accent {
+    background: linear-gradient(135deg, #a89bff 0%, #7ee0c2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.servicehub-contact-premium .hero-subtext {
+    font-size: 1.1875rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 620px;
+    margin: 0 auto 36px;
+    animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
+}
+
+.servicehub-contact-premium .hero-buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+    animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
+}
+
+.servicehub-contact-premium .btn-hero-primary {
+    background: #fff;
+    color: var(--sh-navy);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    padding: 16px 34px;
+    border-radius: var(--sh-radius-sm);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: var(--sh-transition);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+.servicehub-contact-premium .btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.4);
+    color: var(--sh-navy);
+}
+
+.servicehub-contact-premium .btn-hero-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    padding: 16px 34px;
+    border-radius: var(--sh-radius-sm);
+    border: 1.5px solid rgba(255, 255, 255, 0.38);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: var(--sh-transition);
+}
+.servicehub-contact-premium .btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.65);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.servicehub-contact-premium .hero-trust-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+.servicehub-contact-premium .trust-dash {
+    display: inline-block;
+    width: 32px;
+    height: 1.5px;
+    background: rgba(255, 255, 255, 0.42);
+    border-radius: 2px;
+}
+
+.servicehub-contact-premium .hero-scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    width: 24px;
+    height: 40px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    padding-top: 7px;
+}
+.servicehub-contact-premium .hero-scroll-indicator span {
+    width: 3px;
+    height: 8px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    animation: scrollCue 1.8s ease-in-out infinite;
+}
+@keyframes scrollCue {
+    0%   { transform: translateY(0); opacity: 1; }
+    70%  { transform: translateY(12px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 0; }
+}
+
+/* ============================================================
+   SECTION 2 — CONTACT INFO BAR
+   ============================================================ */
+.servicehub-contact-premium .contact-info-bar {
+    position: relative;
+    z-index: 10;
+    padding: 0 0 20px;
+}
+.servicehub-contact-premium .info-bar-inner {
+    background: var(--sh-white);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius);
+    box-shadow: var(--sh-shadow-xl);
+    padding: 30px 36px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    align-items: center;
+    gap: 22px;
+    margin-top: -80px;
+    position: relative;
+    z-index: 11;
+}
+.servicehub-contact-premium .info-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+.servicehub-contact-premium .ib-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    transition: var(--sh-transition);
+}
+.servicehub-contact-premium .ib-icon-support {
+    background: rgba(108, 92, 231, 0.12);
+    color: var(--sh-accent);
+}
+.servicehub-contact-premium .ib-icon-call {
+    background: rgba(59, 59, 152, 0.12);
+    color: var(--sh-primary);
+}
+.servicehub-contact-premium .ib-icon-clock {
+    background: rgba(245, 166, 35, 0.14);
+    color: #f5a623;
+}
+.servicehub-contact-premium .ib-icon-quick {
+    background: rgba(0, 184, 148, 0.12);
+    color: var(--sh-success);
+}
+.servicehub-contact-premium .info-bar-item:hover .ib-icon {
+    transform: scale(1.08) rotate(-4deg);
+}
+.servicehub-contact-premium .ib-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+.servicehub-contact-premium .ib-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sh-slate-light);
+}
+.servicehub-contact-premium .ib-value {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--sh-navy);
+    text-decoration: none;
+    transition: var(--sh-transition);
+    line-height: 1.35;
+    word-break: break-word;
+}
+.servicehub-contact-premium a.ib-value:hover {
+    color: var(--sh-accent);
+}
+.servicehub-contact-premium .ib-value-static {
+    color: var(--sh-navy);
+}
+.servicehub-contact-premium .info-bar-sep {
+    width: 1px;
+    height: 46px;
+    background: var(--sh-border);
+}
+
+/* ============================================================
+   SECTION 3 — FORM + COMPANY INFO
+   ============================================================ */
+.servicehub-contact-premium .form-info-section {
+    padding: 88px 0 96px;
+    background: var(--sh-white);
+}
+
+/* Form block */
+.servicehub-contact-premium .form-block {
+    background: linear-gradient(180deg, #fbfbfe 0%, #f6f7fc 100%);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius);
+    padding: 44px 44px 40px;
+    box-shadow: var(--sh-shadow);
+    position: relative;
+    overflow: hidden;
+}
+.servicehub-contact-premium .form-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sh-primary), var(--sh-accent), #3d2d8a);
+}
+.servicehub-contact-premium .block-heading {
+    margin-bottom: 30px;
+}
+
+.servicehub-contact-premium .sh-form-label {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--sh-navy);
+    margin-bottom: 9px;
+    letter-spacing: 0.01em;
+}
+.servicehub-contact-premium .sh-form-field {
+    background: var(--sh-white);
+    border: 1.5px solid var(--sh-border);
+    border-radius: var(--sh-radius-sm);
+    padding: 14px 17px;
+    font-size: 0.9375rem;
+    color: var(--sh-navy);
+    transition: var(--sh-transition);
+    box-shadow: none;
+}
+.servicehub-contact-premium .sh-form-field::placeholder {
+    color: #a4a7bd;
+}
+.servicehub-contact-premium .sh-form-field:focus {
+    background: var(--sh-white);
+    border-color: var(--sh-accent);
+    box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.12);
+    outline: none;
+}
+.servicehub-contact-premium select.sh-form-field {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236b6b8a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 14px;
+    padding-right: 44px;
+    appearance: none;
+}
+.servicehub-contact-premium textarea.sh-form-field {
+    resize: vertical;
+    min-height: 150px;
+    line-height: 1.65;
+}
+
+.servicehub-contact-premium .form-submit-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 6px;
+}
+.servicehub-contact-premium .btn-sh-submit {
+    background: linear-gradient(135deg, var(--sh-primary) 0%, var(--sh-accent) 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 16px 34px;
+    border-radius: var(--sh-radius-sm);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: var(--sh-transition);
+    box-shadow: 0 8px 24px rgba(59, 59, 152, 0.28);
+}
+.servicehub-contact-premium .btn-sh-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px rgba(59, 59, 152, 0.4);
+    color: #fff;
+}
+.servicehub-contact-premium .submit-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.8125rem;
+    color: var(--sh-slate-light);
+    margin: 0;
+}
+.servicehub-contact-premium .submit-note i {
+    color: var(--sh-success);
+    font-size: 0.9375rem;
+}
+
+/* Company info card */
+.servicehub-contact-premium .company-info-card {
+    background: var(--sh-white);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius);
+    padding: 40px 36px 34px;
+    box-shadow: var(--sh-shadow);
+    position: sticky;
+    top: 24px;
+}
+.servicehub-contact-premium .company-heading {
+    margin-bottom: 30px;
+}
+.servicehub-contact-premium .company-title {
+    font-size: 1.625rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--sh-navy);
+    margin: 0;
+}
+.servicehub-contact-premium .company-detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid var(--sh-border);
+    margin-bottom: 22px;
+}
+.servicehub-contact-premium .company-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: var(--sh-transition);
+}
+.servicehub-contact-premium .cd-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(59, 59, 152, 0.1), rgba(108, 92, 231, 0.14));
+    color: var(--sh-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: var(--sh-transition);
+}
+.servicehub-contact-premium .company-detail-item:hover .cd-icon {
+    background: linear-gradient(135deg, var(--sh-primary), var(--sh-accent));
+    color: #fff;
+    transform: scale(1.05);
+}
+.servicehub-contact-premium .cd-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+.servicehub-contact-premium .cd-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sh-slate-light);
+    margin-bottom: 2px;
+}
+.servicehub-contact-premium .cd-value {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--sh-navy);
+    text-decoration: none;
+    line-height: 1.4;
+}
+.servicehub-contact-premium .cd-link {
+    transition: var(--sh-transition);
+}
+.servicehub-contact-premium a.cd-link:hover {
+    color: var(--sh-accent);
+}
+.servicehub-contact-premium .cd-meta {
+    font-size: 0.8125rem;
+    color: var(--sh-slate-light);
+    line-height: 1.5;
+    margin-top: 2px;
+}
+.servicehub-contact-premium .company-status {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: linear-gradient(135deg, rgba(0, 184, 148, 0.08), rgba(108, 92, 231, 0.06));
+    border-radius: var(--sh-radius-sm);
+    border: 1px solid rgba(0, 184, 148, 0.18);
+}
+.servicehub-contact-premium .status-dot {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--sh-success);
+    box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.6);
+    animation: statusPulse 2s ease-in-out infinite;
+}
+@keyframes statusPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.55); }
+    50%      { box-shadow: 0 0 0 8px rgba(0, 184, 148, 0); }
+}
+.servicehub-contact-premium .status-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.servicehub-contact-premium .status-body strong {
+    font-size: 0.875rem;
+    font-weight: 800;
+    color: var(--sh-navy);
+}
+.servicehub-contact-premium .status-body span {
+    font-size: 0.8125rem;
+    color: var(--sh-slate-light);
+    line-height: 1.45;
+}
+
+/* ============================================================
+   SECTION 4 — LARGE MAP SECTION
+   ============================================================ */
+.servicehub-contact-premium .map-section-large {
+    padding: 96px 0;
+    background: var(--sh-bg);
+}
+.servicehub-contact-premium .map-heading {
+    text-align: center;
+    margin-bottom: 44px;
+}
+.servicehub-contact-premium .map-title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: var(--sh-navy);
+    margin: 0 0 12px;
+}
+.servicehub-contact-premium .map-subtext {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--sh-slate-light);
+    margin: 0 auto;
+    max-width: 620px;
+}
+
+.servicehub-contact-premium .map-frame {
+    border-radius: var(--sh-radius);
+    overflow: hidden;
+    box-shadow: var(--sh-shadow-xl);
+    border: 1px solid var(--sh-border);
+    background: var(--sh-white);
+    padding: 8px;
+}
+.servicehub-contact-premium .map-frame-inner {
+    position: relative;
+    border-radius: calc(var(--sh-radius) - 8px);
+    overflow: hidden;
+    height: 480px;
+    background: #eef1f9;
+}
+.servicehub-contact-premium .map-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    filter: saturate(0.92) contrast(1.02);
+    transition: filter 0.4s ease;
+}
+.servicehub-contact-premium .map-frame-inner:hover .map-iframe {
+    filter: saturate(1) contrast(1.04);
+}
+
+.servicehub-contact-premium .map-marker-card {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    border-radius: var(--sh-radius-sm);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 14px 40px rgba(26, 26, 62, 0.2);
+    z-index: 3;
+    animation: sh-float 5s ease-in-out infinite;
+}
+@keyframes sh-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-6px); }
+}
+.servicehub-contact-premium .marker-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--sh-primary), var(--sh-accent));
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    box-shadow: 0 6px 18px rgba(59, 59, 152, 0.35);
+}
+.servicehub-contact-premium .marker-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+.servicehub-contact-premium .marker-body strong {
+    font-size: 0.9375rem;
+    font-weight: 800;
+    color: var(--sh-navy);
+    letter-spacing: -0.01em;
+}
+.servicehub-contact-premium .marker-body span {
+    font-size: 0.8125rem;
+    color: var(--sh-slate-light);
+    font-weight: 500;
+}
+
+/* ============================================================
+   SECTION 5 — WHY CONTACT SERVICEHUB
+   ============================================================ */
+.servicehub-contact-premium .why-contact-premium {
+    padding: 96px 0;
+    background: var(--sh-white);
+}
+.servicehub-contact-premium .feature-block {
+    background: var(--sh-white);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius);
+    padding: 34px 30px 30px;
+    height: 100%;
+    transition: var(--sh-transition);
+    position: relative;
+    overflow: hidden;
+}
+.servicehub-contact-premium .feature-block::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--sh-primary), var(--sh-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.servicehub-contact-premium .feature-block:hover {
+    transform: translateY(-8px);
+    border-color: rgba(108, 92, 231, 0.22);
+    box-shadow: var(--sh-shadow-lg);
+}
+.servicehub-contact-premium .feature-block:hover::after {
+    transform: scaleX(1);
+}
+.servicehub-contact-premium .feature-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(59, 59, 152, 0.1), rgba(108, 92, 231, 0.14));
+    color: var(--sh-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    transition: var(--sh-transition);
+}
+.servicehub-contact-premium .feature-block:hover .feature-icon {
+    background: linear-gradient(135deg, var(--sh-primary), var(--sh-accent));
+    color: #fff;
+    transform: scale(1.06) rotate(-4deg);
+}
+.servicehub-contact-premium .feature-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--sh-navy);
+    margin-bottom: 10px;
+}
+.servicehub-contact-premium .feature-desc {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--sh-slate-light);
+    margin: 0;
+}
+
+/* ============================================================
+   SECTION 6 — PREMIUM FAQ
+   ============================================================ */
+.servicehub-contact-premium .faq-premium-section {
+    padding: 96px 0;
+    background: var(--sh-bg);
+}
+.servicehub-contact-premium .faq-shell {
+    max-width: 880px;
+    margin: 0 auto;
+}
+.servicehub-contact-premium .sh-faq-premium .accordion-item {
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius-sm) !important;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background: var(--sh-white);
+    transition: var(--sh-transition);
+}
+.servicehub-contact-premium .sh-faq-premium .accordion-item:hover {
+    border-color: rgba(108, 92, 231, 0.3);
+    box-shadow: 0 8px 26px rgba(26, 26, 62, 0.07);
+}
+.servicehub-contact-premium .sh-faq-premium .accordion-button {
+    background: transparent;
+    color: var(--sh-navy);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 22px 28px;
+    box-shadow: none;
+    border: none;
+    letter-spacing: -0.01em;
+}
+.servicehub-contact-premium .sh-faq-premium .accordion-button:not(.collapsed) {
+    color: var(--sh-primary);
+    background: rgba(108, 92, 231, 0.04);
+}
+.servicehub-contact-premium .sh-faq-premium .accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+.servicehub-contact-premium .sh-faq-premium .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236c5ce7'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transition: transform 0.3s ease;
+}
+.servicehub-contact-premium .sh-faq-premium .accordion-body {
+    padding: 0 28px 26px;
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--sh-slate);
+}
+
+/* ============================================================
+   SECTION 7 — FINAL FULL-WIDTH CTA
+   ============================================================ */
+.servicehub-contact-premium .cta-fullwidth {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    isolation: isolate;
+    text-align: center;
+}
+.servicehub-contact-premium .cta-bg-image {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.05);
+    z-index: 1;
+}
+.servicehub-contact-premium .cta-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at center,
+            rgba(20, 20, 50, 0.7) 0%,
+            rgba(15, 15, 40, 0.82) 60%,
+            rgba(10, 10, 30, 0.9) 100%);
+    z-index: 2;
+}
+.servicehub-contact-premium .cta-content-wrap {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 100px 24px;
+    display: flex;
+    justify-content: center;
+}
+.servicehub-contact-premium .cta-content {
+    max-width: 720px;
+    color: #fff;
+}
+.servicehub-contact-premium .cta-eyebrow {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 20px;
+}
+.servicehub-contact-premium .cta-headline {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: #fff;
+    margin: 0 0 20px;
+    text-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
+}
+.servicehub-contact-premium .cta-text {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0 auto 36px;
+    max-width: 600px;
+}
+.servicehub-contact-premium .btn-cta-primary {
+    background: #fff;
+    color: var(--sh-primary-dark);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    padding: 17px 38px;
+    border-radius: var(--sh-radius-sm);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: var(--sh-transition);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.3);
+}
+.servicehub-contact-premium .btn-cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.42);
+    color: var(--sh-primary-dark);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1199.98px) {
+    .servicehub-contact-premium .hero-headline {
+        font-size: 3.375rem;
+    }
+    .servicehub-contact-premium .info-bar-inner {
+        padding: 26px 28px;
+        gap: 18px;
+    }
+    .servicehub-contact-premium .ib-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 1.15rem;
+    }
+    .servicehub-contact-premium .ib-value {
+        font-size: 0.8125rem;
+    }
+    .servicehub-contact-premium .map-frame-inner {
+        height: 440px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .servicehub-contact-premium .hero-centered {
+        min-height: 560px;
+    }
+    .servicehub-contact-premium .hero-headline {
+        font-size: 2.75rem;
+    }
+    .servicehub-contact-premium .hero-subtext {
+        font-size: 1.0625rem;
+    }
+    .servicehub-contact-premium .info-bar-inner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 26px;
+        margin-top: -70px;
+        padding: 28px 30px;
+    }
+    .servicehub-contact-premium .info-bar-sep {
+        display: none;
+    }
+
+    .servicehub-contact-premium .form-info-section,
+    .servicehub-contact-premium .map-section-large,
+    .servicehub-contact-premium .why-contact-premium,
+    .servicehub-contact-premium .faq-premium-section {
+        padding: 72px 0;
+    }
+    .servicehub-contact-premium .block-title {
+        font-size: 1.75rem;
+    }
+    .servicehub-contact-premium .map-title {
+        font-size: 1.75rem;
+    }
+    .servicehub-contact-premium .form-block {
+        padding: 36px 32px 34px;
+    }
+    .servicehub-contact-premium .company-info-card {
+        position: static;
+        padding: 34px 30px 30px;
+    }
+    .servicehub-contact-premium .map-frame-inner {
+        height: 400px;
+    }
+    .servicehub-contact-premium .cta-fullwidth {
+        min-height: 460px;
+    }
+    .servicehub-contact-premium .cta-headline {
+        font-size: 2.375rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .servicehub-contact-premium .hero-centered {
+        min-height: 540px;
+    }
+    .servicehub-contact-premium .hero-content-wrap {
+        padding: 90px 20px;
+    }
+    .servicehub-contact-premium .hero-headline {
+        font-size: 2.125rem;
+    }
+    .servicehub-contact-premium .hero-subtext {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    .servicehub-contact-premium .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+    .servicehub-contact-premium .btn-hero-primary,
+    .servicehub-contact-premium .btn-hero-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 26px;
+        font-size: 0.9375rem;
+    }
+    .servicehub-contact-premium .hero-trust-line {
+        font-size: 0.8125rem;
+        gap: 10px;
+    }
+    .servicehub-contact-premium .trust-dash {
+        width: 22px;
+    }
+    .servicehub-contact-premium .hero-scroll-indicator {
+        display: none;
+    }
+
+    .servicehub-contact-premium .info-bar-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: -60px;
+        padding: 26px 22px;
+        border-radius: var(--sh-radius-sm);
+    }
+    .servicehub-contact-premium .ib-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+    }
+
+    .servicehub-contact-premium .form-info-section,
+    .servicehub-contact-premium .map-section-large,
+    .servicehub-contact-premium .why-contact-premium,
+    .servicehub-contact-premium .faq-premium-section {
+        padding: 56px 0;
+    }
+    .servicehub-contact-premium .section-heading-centered {
+        margin-bottom: 36px;
+    }
+    .servicehub-contact-premium .block-title {
+        font-size: 1.5rem;
+    }
+    .servicehub-contact-premium .block-subtext {
+        font-size: 0.9375rem;
+    }
+    .servicehub-contact-premium .form-block {
+        padding: 28px 22px 26px;
+        border-radius: var(--sh-radius-sm);
+    }
+    .servicehub-contact-premium .form-submit-row {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 14px;
+    }
+    .servicehub-contact-premium .btn-sh-submit {
+        width: 100%;
+        padding: 15px 26px;
+        font-size: 0.9375rem;
+    }
+    .servicehub-contact-premium .submit-note {
+        justify-content: center;
+    }
+    .servicehub-contact-premium .company-info-card {
+        padding: 28px 22px 24px;
+        border-radius: var(--sh-radius-sm);
+    }
+    .servicehub-contact-premium .company-title {
+        font-size: 1.375rem;
+    }
+
+    .servicehub-contact-premium .map-title {
+        font-size: 1.5rem;
+    }
+    .servicehub-contact-premium .map-subtext {
+        font-size: 0.9375rem;
+    }
+    .servicehub-contact-premium .map-frame {
+        padding: 6px;
+        border-radius: var(--sh-radius-sm);
+    }
+    .servicehub-contact-premium .map-frame-inner {
+        height: 340px;
+        border-radius: calc(var(--sh-radius-sm) - 6px);
+    }
+    .servicehub-contact-premium .map-marker-card {
+        bottom: 14px;
+        left: 14px;
+        padding: 12px 14px;
+        gap: 11px;
+    }
+    .servicehub-contact-premium .marker-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1.05rem;
+    }
+    .servicehub-contact-premium .marker-body strong {
+        font-size: 0.8125rem;
+    }
+    .servicehub-contact-premium .marker-body span {
+        font-size: 0.6875rem;
+    }
+
+    .servicehub-contact-premium .feature-block {
+        padding: 28px 24px 26px;
+    }
+    .servicehub-contact-premium .feature-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 1.35rem;
+        margin-bottom: 20px;
+    }
+
+    .servicehub-contact-premium .sh-faq-premium .accordion-button {
+        padding: 18px 20px;
+        font-size: 0.9375rem;
+    }
+    .servicehub-contact-premium .sh-faq-premium .accordion-body {
+        padding: 0 20px 20px;
+        font-size: 0.875rem;
+    }
+
+    .servicehub-contact-premium .cta-fullwidth {
+        min-height: 420px;
+    }
+    .servicehub-contact-premium .cta-content-wrap {
+        padding: 80px 20px;
+    }
+    .servicehub-contact-premium .cta-headline {
+        font-size: 1.875rem;
+    }
+    .servicehub-contact-premium .cta-text {
+        font-size: 1rem;
+    }
+    .servicehub-contact-premium .btn-cta-primary {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 26px;
+    }
+}
+
+@media (max-width: 400px) {
+    .servicehub-contact-premium .hero-headline {
+        font-size: 1.875rem;
+    }
+    .servicehub-contact-premium .hero-eyebrow {
+        font-size: 0.625rem;
+        padding: 8px 14px;
+        letter-spacing: 0.16em;
+    }
+    .servicehub-contact-premium .info-bar-inner {
+        padding: 22px 18px;
+    }
+    .servicehub-contact-premium .ib-value {
+        font-size: 0.75rem;
+    }
+    .servicehub-contact-premium .map-frame-inner {
+        height: 300px;
+    }
+    .servicehub-contact-premium .cta-headline {
+        font-size: 1.625rem;
+    }
+}

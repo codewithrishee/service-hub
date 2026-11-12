@@ -1,0 +1,785 @@
+/* ==========================================================================
+   ServiceHub — Customer Auth Styles (Login + Register)
+   File: public/css/auth.css
+   Scoped under .servicehub-auth. Safe for shared auth pages.
+   ========================================================================== */
+
+/* ---------- Design tokens ---------- */
+.servicehub-auth {
+    --sh-navy: #172B4D;
+    --sh-navy-deep: #0F2038;
+    --sh-navy-soft: #1E3A5F;
+    --sh-teal: #12B8A6;
+    --sh-teal-deep: #0E9488;
+    --sh-teal-soft: rgba(18, 184, 166, 0.12);
+    --sh-bg: #F5F7FA;
+    --sh-white: #FFFFFF;
+    --sh-muted: #64748B;
+    --sh-line: #E2E8F0;
+    --sh-ink: #172B4D;
+    --sh-danger: #B42318;
+    --sh-danger-bg: #FEF3F2;
+    --sh-danger-line: #FECDCA;
+    --sh-success: #027A48;
+    --sh-success-bg: #ECFDF3;
+    --sh-success-line: #ABEFC6;
+    --sh-warn: #B54708;
+    --sh-warn-bg: #FFFAEB;
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--sh-bg);
+    color: var(--sh-ink);
+    padding: clamp(24px, 5vw, 56px) 16px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicehub-auth *,
+.servicehub-auth *::before,
+.servicehub-auth *::after {
+    box-sizing: border-box;
+}
+
+/* ---------- Shell ---------- */
+.servicehub-auth .auth-shell {
+    width: 100%;
+    max-width: 1080px;
+    min-height: 620px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--sh-white);
+    border: 1px solid var(--sh-line);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 1px 2px rgba(23, 43, 77, 0.04),
+        0 24px 60px -20px rgba(23, 43, 77, 0.20);
+}
+
+/* Register variant: taller shell for longer form */
+.servicehub-auth--register .auth-shell {
+    min-height: 720px;
+}
+
+/* ==========================================================================
+   LEFT / RIGHT VISUAL PANEL
+   ========================================================================== */
+.servicehub-auth .auth-visual {
+    position: relative;
+    background:
+        radial-gradient(120% 90% at 0% 0%, var(--sh-navy-soft) 0%, var(--sh-navy) 45%, var(--sh-navy-deep) 100%);
+    color: #E6EDF7;
+    overflow: hidden;
+}
+
+.servicehub-auth .auth-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(60% 50% at 100% 100%, rgba(18, 184, 166, 0.18), transparent 70%),
+        radial-gradient(40% 40% at 10% 90%, rgba(18, 184, 166, 0.10), transparent 70%);
+    pointer-events: none;
+}
+
+.servicehub-auth .auth-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at 30% 30%, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at 30% 30%, black 30%, transparent 75%);
+    pointer-events: none;
+}
+
+/* Mirrored variant (used on register page) */
+.servicehub-auth .auth-visual--right::before {
+    background:
+        radial-gradient(60% 50% at 0% 100%, rgba(18, 184, 166, 0.18), transparent 70%),
+        radial-gradient(40% 40% at 90% 90%, rgba(18, 184, 166, 0.10), transparent 70%);
+}
+
+.servicehub-auth .auth-visual--right::after {
+    mask-image: radial-gradient(ellipse at 70% 30%, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at 70% 30%, black 30%, transparent 75%);
+}
+
+.servicehub-auth .auth-visual-inner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: clamp(28px, 4vw, 48px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Brand */
+.servicehub-auth .auth-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    width: fit-content;
+    border-radius: 6px;
+    transition: opacity 0.15s ease;
+}
+
+.servicehub-auth .auth-brand:hover {
+    opacity: 0.92;
+    color: #FFFFFF;
+}
+
+.servicehub-auth .auth-brand:focus-visible {
+    outline: 2px solid var(--sh-teal);
+    outline-offset: 4px;
+}
+
+.servicehub-auth .auth-brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--sh-teal), var(--sh-teal-deep));
+    color: #FFFFFF;
+    font-size: 16px;
+    flex-shrink: 0;
+    box-shadow: 0 6px 16px -6px rgba(18, 184, 166, 0.6);
+}
+
+.servicehub-auth .auth-brand-name span {
+    color: var(--sh-teal);
+}
+
+/* Content */
+.servicehub-auth .auth-visual-content {
+    max-width: 420px;
+}
+
+.servicehub-auth .auth-visual-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(230, 237, 247, 0.72);
+    margin-bottom: 18px;
+}
+
+.servicehub-auth .auth-visual-eyebrow .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sh-teal);
+    box-shadow: 0 0 0 4px rgba(18, 184, 166, 0.18);
+}
+
+.servicehub-auth .auth-visual-headline {
+    font-size: clamp(24px, 2.6vw, 32px);
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #FFFFFF;
+    margin: 0 0 16px;
+}
+
+.servicehub-auth .auth-visual-headline .accent {
+    color: var(--sh-teal);
+}
+
+.servicehub-auth .auth-visual-text {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: rgba(230, 237, 247, 0.75);
+    margin: 0 0 28px;
+}
+
+/* Trust points */
+.servicehub-auth .auth-visual-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.servicehub-auth .auth-visual-point {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: rgba(230, 237, 247, 0.9);
+}
+
+.servicehub-auth .auth-visual-point-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(18, 184, 166, 0.14);
+    border: 1px solid rgba(18, 184, 166, 0.28);
+    color: var(--sh-teal);
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+/* Footer */
+.servicehub-auth .auth-visual-footer {
+    font-size: 11.5px;
+    color: rgba(230, 237, 247, 0.5);
+    letter-spacing: 0.01em;
+}
+
+/* ==========================================================================
+   FORM PANEL
+   ========================================================================== */
+.servicehub-auth .auth-form-panel {
+    background: var(--sh-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(28px, 4vw, 56px);
+    position: relative;
+}
+
+.servicehub-auth .auth-form-wrap {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+/* Mobile brand (hidden on desktop) */
+.servicehub-auth .auth-mobile-brand {
+    display: none;
+}
+
+/* Header */
+.servicehub-auth .auth-form-header {
+    margin-bottom: 26px;
+}
+
+.servicehub-auth .auth-form-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sh-teal-deep);
+    margin-bottom: 10px;
+}
+
+.servicehub-auth .auth-form-title {
+    font-size: clamp(22px, 2.6vw, 28px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--sh-ink);
+    margin: 0 0 8px;
+    line-height: 1.25;
+}
+
+.servicehub-auth .auth-form-subtitle {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--sh-muted);
+    margin: 0;
+}
+
+/* Alerts */
+.servicehub-auth .auth-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    border: 1px solid transparent;
+}
+
+.servicehub-auth .auth-alert i {
+    font-size: 14px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.servicehub-auth .auth-alert-success {
+    color: var(--sh-success);
+    background: var(--sh-success-bg);
+    border-color: var(--sh-success-line);
+}
+
+.servicehub-auth .auth-alert-error {
+    color: var(--sh-danger);
+    background: var(--sh-danger-bg);
+    border-color: var(--sh-danger-line);
+}
+
+/* Fields */
+.servicehub-auth .auth-field {
+    margin-bottom: 18px;
+}
+
+.servicehub-auth .auth-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 7px;
+}
+
+.servicehub-auth .auth-input-group {
+    position: relative;
+}
+
+.servicehub-auth .auth-input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: #9AA8BC;
+    pointer-events: none;
+    transition: color 0.15s ease;
+    z-index: 2;
+}
+
+.servicehub-auth .auth-input {
+    width: 100%;
+    height: 50px;
+    padding: 0 14px 0 42px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--sh-ink);
+    background: #FFFFFF;
+    border: 1px solid var(--sh-line);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.servicehub-auth .auth-input::placeholder {
+    color: #9AA8BC;
+}
+
+.servicehub-auth .auth-input:hover {
+    border-color: #CBD5E1;
+}
+
+.servicehub-auth .auth-input:focus {
+    border-color: var(--sh-teal);
+    box-shadow: 0 0 0 3px var(--sh-teal-soft);
+}
+
+.servicehub-auth .auth-input:focus-visible {
+    outline: 2px solid var(--sh-teal);
+    outline-offset: 1px;
+}
+
+.servicehub-auth .auth-input.is-invalid {
+    border-color: #F04438;
+}
+
+.servicehub-auth .auth-input.is-invalid:focus {
+    box-shadow: 0 0 0 3px rgba(240, 68, 56, 0.12);
+}
+
+.servicehub-auth .auth-input-group:focus-within .auth-input-icon {
+    color: var(--sh-teal);
+}
+
+.servicehub-auth .auth-input-has-toggle {
+    padding-right: 48px;
+}
+
+/* Password toggle */
+.servicehub-auth .auth-toggle {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #9AA8BC;
+    cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease;
+    z-index: 3;
+}
+
+.servicehub-auth .auth-toggle:hover {
+    color: var(--sh-teal);
+    background: var(--sh-teal-soft);
+}
+
+.servicehub-auth .auth-toggle:focus-visible {
+    outline: 2px solid var(--sh-teal);
+    outline-offset: 1px;
+}
+
+.servicehub-auth .auth-toggle i {
+    font-size: 16px;
+    pointer-events: none;
+}
+
+/* Field errors */
+.servicehub-auth .auth-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 7px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--sh-danger);
+    line-height: 1.45;
+}
+
+.servicehub-auth .auth-error i {
+    font-size: 13px;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+/* Submit */
+.servicehub-auth .auth-submit {
+    width: 100%;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 6px;
+    padding: 0 18px;
+    font-family: inherit;
+    font-size: 14.5px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    background: var(--sh-navy);
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    box-shadow: 0 1px 2px rgba(23, 43, 77, 0.08);
+}
+
+.servicehub-auth .auth-submit i {
+    font-size: 16px;
+}
+
+.servicehub-auth .auth-submit:hover {
+    background: var(--sh-navy-deep);
+    box-shadow: 0 6px 18px -6px rgba(23, 43, 77, 0.35);
+}
+
+.servicehub-auth .auth-submit:active {
+    background: #081628;
+}
+
+.servicehub-auth .auth-submit:focus-visible {
+    outline: 2px solid var(--sh-teal);
+    outline-offset: 2px;
+}
+
+.servicehub-auth .auth-submit[disabled] {
+    opacity: 0.65;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Footer / register link */
+.servicehub-auth .auth-form-footer {
+    margin: 22px 0 0;
+    text-align: center;
+    font-size: 13.5px;
+    color: var(--sh-muted);
+}
+
+.servicehub-auth .auth-form-footer a {
+    color: var(--sh-teal-deep);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: color 0.15s ease;
+    margin-left: 2px;
+}
+
+.servicehub-auth .auth-form-footer a:hover {
+    color: var(--sh-navy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.servicehub-auth .auth-form-footer a:focus-visible {
+    outline: 2px solid var(--sh-teal);
+    outline-offset: 2px;
+}
+
+/* Security note */
+.servicehub-auth .auth-form-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 16px 0 0;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #9AA8BC;
+    text-align: center;
+}
+
+.servicehub-auth .auth-form-note i {
+    color: var(--sh-teal);
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   PASSWORD STRENGTH (register page)
+   ========================================================================== */
+.servicehub-auth .auth-strength {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    min-height: 14px;
+}
+
+.servicehub-auth .auth-strength-track {
+    display: flex;
+    flex: 1;
+    gap: 4px;
+}
+
+.servicehub-auth .auth-strength-bar {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--sh-line);
+    transition: background-color 0.2s ease;
+}
+
+.servicehub-auth .auth-strength-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--sh-muted);
+    white-space: nowrap;
+    min-width: 56px;
+    text-align: right;
+}
+
+/* Strength states */
+.servicehub-auth .auth-strength[data-strength="1"] .auth-strength-bar:nth-child(1) {
+    background: #F04438;
+}
+
+.servicehub-auth .auth-strength[data-strength="1"] .auth-strength-label {
+    color: #B42318;
+}
+
+.servicehub-auth .auth-strength[data-strength="2"] .auth-strength-bar:nth-child(-n+2) {
+    background: #F79009;
+}
+
+.servicehub-auth .auth-strength[data-strength="2"] .auth-strength-label {
+    color: var(--sh-warn);
+}
+
+.servicehub-auth .auth-strength[data-strength="3"] .auth-strength-bar {
+    background: var(--sh-teal);
+}
+
+.servicehub-auth .auth-strength[data-strength="3"] .auth-strength-label {
+    color: var(--sh-success);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* Tablet: 768px – 1199px */
+@media (max-width: 1199.98px) and (min-width: 768px) {
+    .servicehub-auth .auth-shell {
+        max-width: 960px;
+        min-height: 580px;
+    }
+
+    .servicehub-auth--register .auth-shell {
+        min-height: 700px;
+    }
+
+    .servicehub-auth .auth-visual-inner {
+        padding: 32px;
+    }
+
+    .servicehub-auth .auth-visual-headline {
+        font-size: 26px;
+    }
+
+    .servicehub-auth .auth-form-panel {
+        padding: 36px 32px;
+    }
+}
+
+/* Mobile: below 768px */
+@media (max-width: 767.98px) {
+    .servicehub-auth {
+        padding: 24px 14px 40px;
+        align-items: flex-start;
+    }
+
+    .servicehub-auth .auth-shell {
+        grid-template-columns: 1fr;
+        max-width: 460px;
+        min-height: 0;
+        border-radius: 16px;
+    }
+
+    .servicehub-auth .auth-visual {
+        display: none;
+    }
+
+    .servicehub-auth .auth-form-panel {
+        padding: 26px 22px 30px;
+    }
+
+    /* Mobile brand bar */
+    .servicehub-auth .auth-mobile-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+        padding-bottom: 22px;
+        margin-bottom: 22px;
+        border-bottom: 1px solid var(--sh-line);
+    }
+
+    .servicehub-auth .auth-mobile-brand-text {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: var(--sh-ink);
+        text-decoration: none;
+        border-radius: 6px;
+    }
+
+    .servicehub-auth .auth-mobile-brand-text .accent {
+        color: var(--sh-teal);
+    }
+
+    .servicehub-auth .auth-mobile-brand-text:focus-visible {
+        outline: 2px solid var(--sh-teal);
+        outline-offset: 4px;
+    }
+
+    .servicehub-auth .auth-mobile-brand-text .auth-brand-mark {
+        background: linear-gradient(135deg, var(--sh-teal), var(--sh-teal-deep));
+        color: #FFFFFF;
+        box-shadow: 0 6px 16px -6px rgba(18, 184, 166, 0.5);
+    }
+
+    .servicehub-auth .auth-mobile-tagline {
+        font-size: 12.5px;
+        color: var(--sh-muted);
+        font-weight: 500;
+    }
+
+    .servicehub-auth .auth-form-wrap {
+        max-width: 100%;
+    }
+
+    .servicehub-auth .auth-form-header {
+        text-align: center;
+        margin-bottom: 22px;
+    }
+
+    .servicehub-auth .auth-form-title {
+        font-size: 22px;
+    }
+
+    .servicehub-auth .auth-form-subtitle {
+        font-size: 13.5px;
+    }
+}
+
+/* Small mobile: below 400px */
+@media (max-width: 399.98px) {
+    .servicehub-auth {
+        padding: 16px 10px 32px;
+    }
+
+    .servicehub-auth .auth-form-panel {
+        padding: 22px 16px 24px;
+    }
+
+    .servicehub-auth .auth-shell {
+        border-radius: 14px;
+    }
+
+    .servicehub-auth .auth-form-title {
+        font-size: 20px;
+    }
+
+    .servicehub-auth .auth-input {
+        height: 48px;
+        font-size: 13.5px;
+    }
+
+    .servicehub-auth .auth-submit {
+        height: 48px;
+        font-size: 14px;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .servicehub-auth *,
+    .servicehub-auth *::before,
+    .servicehub-auth *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+.auth-logo {
+    display: block;
+    width: 190px;
+    max-width: 100%;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+}

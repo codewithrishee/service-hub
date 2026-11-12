@@ -1,0 +1,1107 @@
+
+
+.servicehub-service-detail {
+    --sh-primary: #3b3b98;
+    --sh-primary-dark: #2a2a72;
+    --sh-navy: #1a1a3e;
+    --sh-slate: #4a4a6a;
+    --sh-slate-light: #6b6b8a;
+    --sh-accent: #6c5ce7;
+    --sh-bg: #f7f8fc;
+    --sh-white: #ffffff;
+    --sh-border: #e8eaf2;
+    --sh-success: #00b894;
+    --sh-radius: 16px;
+    --sh-radius-sm: 10px;
+    --sh-shadow: 0 4px 24px rgba(26, 26, 62, 0.08);
+    --sh-shadow-lg: 0 12px 48px rgba(26, 26, 62, 0.12);
+    --sh-transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+
+    font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--sh-navy);
+    background: var(--sh-bg);
+    padding-bottom: 96px;
+}
+
+/* ---------- SECTION 1: BREADCRUMB ---------- */
+.servicehub-service-detail .service-breadcrumb {
+    background: var(--sh-white);
+    border-bottom: 1px solid var(--sh-border);
+    padding: 14px 0;
+}
+.servicehub-service-detail .service-breadcrumb .breadcrumb {
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
+.servicehub-service-detail .service-breadcrumb .breadcrumb-item a {
+    color: var(--sh-slate-light);
+    text-decoration: none;
+    transition: var(--sh-transition);
+}
+.servicehub-service-detail .service-breadcrumb .breadcrumb-item a:hover {
+    color: var(--sh-primary);
+}
+.servicehub-service-detail .service-breadcrumb .breadcrumb-item.active {
+    color: var(--sh-navy);
+    font-weight: 600;
+}
+.servicehub-service-detail .service-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    color: #c5c8d8;
+}
+
+/* ---------- SECTION 2: SERVICE HERO ---------- */
+.servicehub-service-detail .service-hero {
+    padding: 32px 0 40px;
+    background: var(--sh-white);
+}
+
+/* Gallery */
+.servicehub-service-detail .service-gallery {
+    position: sticky;
+    top: 20px;
+}
+.servicehub-service-detail .gallery-main {
+    position: relative;
+    border-radius: var(--sh-radius);
+    overflow: hidden;
+    background: #eef0f7;
+    box-shadow: var(--sh-shadow);
+}
+.servicehub-service-detail .gallery-main-img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.servicehub-service-detail .gallery-main:hover .gallery-main-img {
+    transform: scale(1.04);
+}
+.servicehub-service-detail .gallery-count {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background: rgba(26, 26, 62, 0.78);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    backdrop-filter: blur(8px);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.servicehub-service-detail .gallery-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--sh-primary);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 7px 14px;
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 12px rgba(26, 26, 62, 0.1);
+}
+
+.servicehub-service-detail .gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+}
+.servicehub-service-detail .gallery-thumb {
+    border: 2px solid transparent;
+    border-radius: var(--sh-radius-sm);
+    overflow: hidden;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    transition: var(--sh-transition);
+    aspect-ratio: 1 / 1;
+}
+.servicehub-service-detail .gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.servicehub-service-detail .gallery-thumb:hover {
+    border-color: var(--sh-accent);
+    transform: translateY(-2px);
+}
+.servicehub-service-detail .gallery-thumb:hover img {
+    transform: scale(1.06);
+}
+.servicehub-service-detail .gallery-thumb.active {
+    border-color: var(--sh-primary);
+    box-shadow: 0 4px 14px rgba(59, 59, 152, 0.2);
+}
+
+/* Service Info */
+.servicehub-service-detail .service-info {
+    padding-top: 4px;
+}
+.servicehub-service-detail .info-category {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sh-accent);
+    background: rgba(108, 92, 231, 0.08);
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+}
+.servicehub-service-detail .info-title {
+    font-size: 2.125rem;
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: var(--sh-navy);
+    margin-bottom: 14px;
+}
+.servicehub-service-detail .info-desc {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--sh-slate);
+    margin-bottom: 20px;
+}
+.servicehub-service-detail .info-rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-bottom: 24px;
+}
+.servicehub-service-detail .info-rating .stars {
+    color: #f5a623;
+    font-size: 0.9375rem;
+    letter-spacing: 1px;
+    display: inline-flex;
+    gap: 2px;
+}
+.servicehub-service-detail .rating-score {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--sh-navy);
+}
+.servicehub-service-detail .rating-divider {
+    width: 1px;
+    height: 16px;
+    background: var(--sh-border);
+}
+.servicehub-service-detail .rating-reviews {
+    font-size: 0.875rem;
+    color: var(--sh-slate-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--sh-transition);
+}
+.servicehub-service-detail .rating-reviews:hover {
+    color: var(--sh-primary);
+    text-decoration: underline;
+}
+.servicehub-service-detail .verified-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--sh-success);
+    background: rgba(0, 184, 148, 0.09);
+    padding: 5px 12px;
+    border-radius: 100px;
+}
+
+/* Price Box */
+.servicehub-service-detail .info-price-box {
+    background: linear-gradient(135deg, #f7f8fc 0%, #eef1fa 100%);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius);
+    padding: 20px 22px;
+    margin-bottom: 24px;
+}
+.servicehub-service-detail .price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.servicehub-service-detail .price-block {
+    display: flex;
+    flex-direction: column;
+}
+.servicehub-service-detail .price-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sh-slate-light);
+    margin-bottom: 2px;
+}
+.servicehub-service-detail .price-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--sh-primary);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+.servicehub-service-detail .duration-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+.servicehub-service-detail .duration-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sh-slate-light);
+    margin-bottom: 2px;
+}
+.servicehub-service-detail .duration-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--sh-navy);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.servicehub-service-detail .price-note {
+    font-size: 0.8125rem;
+    color: var(--sh-slate-light);
+    margin: 14px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(232, 234, 242, 0.9);
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    line-height: 1.5;
+}
+.servicehub-service-detail .price-note i {
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* CTAs */
+.servicehub-service-detail .info-cta {
+    display: flex;
+    gap: 12px;
+}
+.servicehub-service-detail .btn-book {
+    flex: 1;
+    background: linear-gradient(135deg, var(--sh-primary) 0%, var(--sh-accent) 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 24px;
+    border-radius: var(--sh-radius-sm);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    transition: var(--sh-transition);
+    box-shadow: 0 6px 20px rgba(59, 59, 152, 0.28);
+}
+.servicehub-service-detail .btn-book:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(59, 59, 152, 0.38);
+    color: #fff;
+}
+.servicehub-service-detail .btn-wishlist {
+    background: var(--sh-white);
+    color: var(--sh-slate);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    padding: 14px 22px;
+    border-radius: var(--sh-radius-sm);
+    border: 1.5px solid var(--sh-border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--sh-transition);
+}
+.servicehub-service-detail .btn-wishlist:hover {
+    border-color: var(--sh-accent);
+    color: var(--sh-accent);
+    background: rgba(108, 92, 231, 0.04);
+}
+
+/* ---------- SECTION 3: TRUST STRIP ---------- */
+.servicehub-service-detail .trust-strip {
+    background: var(--sh-white);
+    border-top: 1px solid var(--sh-border);
+    border-bottom: 1px solid var(--sh-border);
+    padding: 20px 0;
+}
+.servicehub-service-detail .trust-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+}
+.servicehub-service-detail .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--sh-slate);
+    position: relative;
+}
+.servicehub-service-detail .trust-item i {
+    color: var(--sh-success);
+    font-size: 1.05rem;
+}
+.servicehub-service-detail .trust-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 18px;
+    background: var(--sh-border);
+}
+
+/* ---------- SHARED SECTION STYLES ---------- */
+.servicehub-service-detail .section-block {
+    padding: 56px 0;
+}
+.servicehub-service-detail .section-heading {
+    margin-bottom: 32px;
+}
+.servicehub-service-detail .section-eyebrow {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sh-accent);
+    margin-bottom: 8px;
+}
+.servicehub-service-detail .section-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--sh-navy);
+    margin: 0;
+}
+.servicehub-service-detail .section-title-muted {
+    color: var(--sh-slate);
+}
+
+/* ---------- SECTION 4: ABOUT ---------- */
+.servicehub-service-detail .about-section {
+    background: var(--sh-white);
+}
+.servicehub-service-detail .about-content p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--sh-slate);
+    margin-bottom: 16px;
+    max-width: 760px;
+}
+.servicehub-service-detail .about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- SECTION 5: WHAT'S INCLUDED ---------- */
+.servicehub-service-detail .included-section {
+    background: var(--sh-bg);
+}
+.servicehub-service-detail .included-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 32px;
+}
+.servicehub-service-detail .included-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: var(--sh-white);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius-sm);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--sh-navy);
+    transition: var(--sh-transition);
+}
+.servicehub-service-detail .included-item:hover {
+    border-color: rgba(0, 184, 148, 0.35);
+    box-shadow: 0 4px 16px rgba(0, 184, 148, 0.08);
+    transform: translateX(3px);
+}
+.servicehub-service-detail .included-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(0, 184, 148, 0.1);
+    color: var(--sh-success);
+    font-size: 0.8125rem;
+    flex-shrink: 0;
+}
+
+/* ---------- SECTION 6: WHAT'S NOT INCLUDED ---------- */
+.servicehub-service-detail .excluded-section {
+    background: var(--sh-white);
+    padding-top: 0;
+}
+.servicehub-service-detail .excluded-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 32px;
+}
+.servicehub-service-detail .excluded-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--sh-slate-light);
+    padding: 6px 0;
+}
+.servicehub-service-detail .excluded-item i {
+    color: #c5c8d8;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
+
+/* ---------- SECTION 7: HOW IT WORKS ---------- */
+.servicehub-service-detail .process-section {
+    background: var(--sh-bg);
+}
+.servicehub-service-detail .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.servicehub-service-detail .process-step {
+    background: var(--sh-white);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius);
+    padding: 28px 24px;
+    position: relative;
+    transition: var(--sh-transition);
+}
+.servicehub-service-detail .process-step:hover {
+    box-shadow: var(--sh-shadow);
+    transform: translateY(-3px);
+}
+.servicehub-service-detail .step-number {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(108, 92, 231, 0.35);
+    margin-bottom: 16px;
+}
+.servicehub-service-detail .step-title {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--sh-navy);
+    margin-bottom: 6px;
+}
+.servicehub-service-detail .step-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--sh-slate-light);
+    margin: 0;
+}
+
+/* ---------- SECTION 8: SERVICE INFORMATION ---------- */
+.servicehub-service-detail .info-grid-section {
+    background: var(--sh-white);
+}
+.servicehub-service-detail .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--sh-border);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius);
+    overflow: hidden;
+}
+.servicehub-service-detail .info-grid-item {
+    background: var(--sh-white);
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.servicehub-service-detail .info-grid-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sh-slate-light);
+}
+.servicehub-service-detail .info-grid-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--sh-navy);
+}
+
+/* ---------- SECTION 9: REVIEWS ---------- */
+.servicehub-service-detail .reviews-section {
+    background: var(--sh-bg);
+}
+.servicehub-service-detail .reviews-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Summary */
+.servicehub-service-detail .reviews-summary {
+    background: var(--sh-white);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius);
+    padding: 28px 24px;
+    position: sticky;
+    top: 20px;
+}
+.servicehub-service-detail .summary-score {
+    text-align: center;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--sh-border);
+    margin-bottom: 22px;
+}
+.servicehub-service-detail .summary-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--sh-navy);
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+}
+.servicehub-service-detail .summary-stars {
+    display: block;
+    color: #f5a623;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+.servicehub-service-detail .summary-count {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--sh-slate-light);
+}
+.servicehub-service-detail .rating-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.servicehub-service-detail .breakdown-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.servicehub-service-detail .breakdown-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--sh-slate);
+    min-width: 36px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+.servicehub-service-detail .breakdown-label i {
+    color: #f5a623;
+    font-size: 0.625rem;
+}
+.servicehub-service-detail .breakdown-bar {
+    flex: 1;
+    height: 7px;
+    background: #eef0f7;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.servicehub-service-detail .breakdown-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--sh-primary), var(--sh-accent));
+    border-radius: 100px;
+    transition: width 0.6s ease;
+}
+.servicehub-service-detail .breakdown-count {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--sh-slate-light);
+    min-width: 28px;
+    text-align: right;
+}
+
+/* Review Cards */
+.servicehub-service-detail .reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.servicehub-service-detail .review-card {
+    background: var(--sh-white);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius);
+    padding: 24px 26px;
+    transition: var(--sh-transition);
+}
+.servicehub-service-detail .review-card:hover {
+    box-shadow: var(--sh-shadow);
+    transform: translateY(-2px);
+    border-color: rgba(108, 92, 231, 0.2);
+}
+.servicehub-service-detail .review-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+.servicehub-service-detail .review-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--sh-border);
+    flex-shrink: 0;
+}
+.servicehub-service-detail .review-meta {
+    flex: 1;
+    min-width: 140px;
+}
+.servicehub-service-detail .review-name {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--sh-navy);
+    margin: 0 0 3px;
+}
+.servicehub-service-detail .review-sub {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.servicehub-service-detail .review-stars {
+    color: #f5a623;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+.servicehub-service-detail .review-date {
+    font-size: 0.75rem;
+    color: var(--sh-slate-light);
+    font-weight: 500;
+}
+.servicehub-service-detail .review-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--sh-success);
+    background: rgba(0, 184, 148, 0.08);
+    padding: 5px 11px;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+.servicehub-service-detail .review-text {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--sh-slate);
+    margin: 0;
+}
+
+/* ---------- SECTION 10: RELATED SERVICES ---------- */
+.servicehub-service-detail .related-section {
+    background: var(--sh-white);
+}
+.servicehub-service-detail .related-card {
+    background: var(--sh-white);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: var(--sh-transition);
+}
+.servicehub-service-detail .related-card:hover {
+    box-shadow: var(--sh-shadow-lg);
+    transform: translateY(-5px);
+    border-color: rgba(108, 92, 231, 0.2);
+}
+.servicehub-service-detail .related-image {
+    height: 180px;
+    overflow: hidden;
+    background: #eef0f7;
+}
+.servicehub-service-detail .related-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.servicehub-service-detail .related-card:hover .related-image img {
+    transform: scale(1.06);
+}
+.servicehub-service-detail .related-body {
+    padding: 20px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.servicehub-service-detail .related-title {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--sh-navy);
+    margin-bottom: 10px;
+}
+.servicehub-service-detail .related-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.servicehub-service-detail .related-rating {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--sh-navy);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.servicehub-service-detail .related-rating i {
+    color: #f5a623;
+    font-size: 0.75rem;
+}
+.servicehub-service-detail .related-price {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--sh-primary);
+}
+.servicehub-service-detail .btn-related {
+    margin-top: auto;
+    background: transparent;
+    border: 1.5px solid var(--sh-border);
+    color: var(--sh-primary);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    padding: 10px 16px;
+    border-radius: var(--sh-radius-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transition: var(--sh-transition);
+}
+.servicehub-service-detail .btn-related:hover {
+    background: var(--sh-primary);
+    border-color: var(--sh-primary);
+    color: #fff;
+}
+
+/* ---------- SECTION 11: FINAL CTA ---------- */
+.servicehub-service-detail .final-cta {
+    background: linear-gradient(135deg, var(--sh-navy) 0%, var(--sh-primary-dark) 55%, #3d2d8a 100%);
+    padding: 72px 0;
+    position: relative;
+    overflow: hidden;
+}
+.servicehub-service-detail .final-cta::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -15%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(108, 92, 231, 0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+.servicehub-service-detail .final-cta-inner {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.servicehub-service-detail .final-cta-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+}
+.servicehub-service-detail .final-cta-desc {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 520px;
+    margin: 0 auto 28px;
+    line-height: 1.65;
+}
+.servicehub-service-detail .final-cta-price {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+.servicehub-service-detail .final-price-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.55);
+}
+.servicehub-service-detail .final-price-value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+}
+.servicehub-service-detail .btn-final-cta {
+    background: #fff;
+    color: var(--sh-primary-dark);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    padding: 16px 40px;
+    border-radius: var(--sh-radius-sm);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--sh-transition);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+.servicehub-service-detail .btn-final-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+    color: var(--sh-primary-dark);
+}
+.servicehub-service-detail .final-cta-trust {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 20px 0 0;
+    font-weight: 500;
+}
+
+/* ---------- STICKY BOOKING BAR ---------- */
+.servicehub-service-detail .booking-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--sh-border);
+    box-shadow: 0 -4px 24px rgba(26, 26, 62, 0.1);
+    padding: 14px 0;
+    z-index: 1030;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.servicehub-service-detail .booking-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.servicehub-service-detail .booking-bar-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.servicehub-service-detail .booking-bar-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--sh-navy);
+}
+.servicehub-service-detail .booking-bar-price {
+    font-size: 0.8125rem;
+    color: var(--sh-slate-light);
+    font-weight: 500;
+}
+.servicehub-service-detail .booking-bar-price strong {
+    color: var(--sh-primary);
+    font-weight: 800;
+}
+.servicehub-service-detail .btn-booking-bar {
+    background: linear-gradient(135deg, var(--sh-primary) 0%, var(--sh-accent) 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    padding: 12px 28px;
+    border-radius: var(--sh-radius-sm);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--sh-transition);
+    box-shadow: 0 4px 16px rgba(59, 59, 152, 0.3);
+    white-space: nowrap;
+}
+.servicehub-service-detail .btn-booking-bar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(59, 59, 152, 0.4);
+    color: #fff;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 991.98px) {
+    .servicehub-service-detail .gallery-main-img {
+        height: 360px;
+    }
+    .servicehub-service-detail .service-gallery {
+        position: static;
+    }
+    .servicehub-service-detail .info-title {
+        font-size: 1.75rem;
+    }
+    .servicehub-service-detail .reviews-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    .servicehub-service-detail .reviews-summary {
+        position: static;
+    }
+    .servicehub-service-detail .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .servicehub-service-detail .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .servicehub-service-detail {
+        padding-bottom: 84px;
+    }
+    .servicehub-service-detail .service-hero {
+        padding: 20px 0 28px;
+    }
+    .servicehub-service-detail .gallery-main-img {
+        height: 260px;
+    }
+    .servicehub-service-detail .gallery-thumbs {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 6px;
+        scrollbar-width: thin;
+    }
+    .servicehub-service-detail .gallery-thumb {
+        flex: 0 0 72px;
+        width: 72px;
+        height: 72px;
+    }
+    .servicehub-service-detail .info-title {
+        font-size: 1.5rem;
+    }
+    .servicehub-service-detail .info-cta {
+        flex-direction: column;
+    }
+    .servicehub-service-detail .btn-wishlist {
+        width: 100%;
+    }
+    .servicehub-service-detail .trust-inner {
+        justify-content: flex-start;
+        gap: 12px 20px;
+    }
+    .servicehub-service-detail .trust-item:not(:last-child)::after {
+        display: none;
+    }
+    .servicehub-service-detail .trust-item {
+        font-size: 0.8125rem;
+    }
+    .servicehub-service-detail .section-block {
+        padding: 40px 0;
+    }
+    .servicehub-service-detail .section-title {
+        font-size: 1.375rem;
+    }
+    .servicehub-service-detail .included-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .servicehub-service-detail .excluded-list {
+        grid-template-columns: 1fr;
+    }
+    .servicehub-service-detail .process-steps {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .servicehub-service-detail .process-step {
+        padding: 22px 20px;
+    }
+    .servicehub-service-detail .info-grid {
+        grid-template-columns: 1fr;
+    }
+    .servicehub-service-detail .info-grid-item {
+        padding: 18px 20px;
+    }
+    .servicehub-service-detail .review-card {
+        padding: 20px;
+    }
+    .servicehub-service-detail .review-verified {
+        margin-left: 0;
+    }
+    .servicehub-service-detail .final-cta {
+        padding: 52px 0;
+    }
+    .servicehub-service-detail .final-cta-title {
+        font-size: 1.5rem;
+    }
+    .servicehub-service-detail .final-price-value {
+        font-size: 1.875rem;
+    }
+    .servicehub-service-detail .btn-final-cta {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 24px;
+    }
+    .servicehub-service-detail .booking-bar {
+        padding: 10px 0;
+    }
+    .servicehub-service-detail .booking-bar-inner {
+        gap: 12px;
+    }
+    .servicehub-service-detail .booking-bar-title {
+        font-size: 0.8125rem;
+    }
+    .servicehub-service-detail .booking-bar-price {
+        font-size: 0.75rem;
+    }
+    .servicehub-service-detail .btn-booking-bar {
+        flex: 1;
+        justify-content: center;
+        padding: 12px 16px;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .servicehub-service-detail .booking-bar-title {
+        max-width: 140px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

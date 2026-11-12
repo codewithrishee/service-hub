@@ -1,0 +1,703 @@
+/* =========================================================
+   ServiceHub — Booking Create Page
+   Premium home-services booking experience
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. Variables
+   --------------------------------------------------------- */
+:root {
+    --sh-primary:        #6d5efc;
+    --sh-primary-dark:   #574bdb;
+    --sh-primary-soft:   #ece9ff;
+    --sh-primary-glow:   rgba(109, 94, 252, 0.25);
+
+    --sh-text:           #1f2033;
+    --sh-muted:          #6b6f80;
+    --sh-border:         #e8e8f0;
+    --sh-border-strong:  #d9d9e6;
+
+    --sh-bg:             #f8f8fc;
+    --sh-card:           #ffffff;
+    --sh-success:        #16a34a;
+    --sh-success-soft:   #e7f7ee;
+    --sh-danger:         #dc2626;
+    --sh-danger-soft:    #fdecec;
+    --sh-danger-border:  #f4b8b8;
+
+    --sh-radius-sm:      10px;
+    --sh-radius-md:      14px;
+    --sh-radius-lg:      20px;
+    --sh-radius-xl:      24px;
+
+    --sh-shadow-sm:      0 1px 2px rgba(15, 17, 30, 0.04);
+    --sh-shadow-md:      0 8px 24px rgba(15, 17, 30, 0.06);
+    --sh-shadow-lg:      0 18px 40px rgba(15, 17, 30, 0.08);
+
+    --sh-font-head:      "Manrope", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --sh-font-body:      "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ---------------------------------------------------------
+   2. Page shell
+   --------------------------------------------------------- */
+.servicehub-booking-create {
+    background: var(--sh-bg);
+    color: var(--sh-text);
+    font-family: var(--sh-font-body);
+    padding-bottom: 4rem;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.servicehub-booking-create *,
+.servicehub-booking-create *::before,
+.servicehub-booking-create *::after {
+    box-sizing: border-box;
+}
+
+.servicehub-booking-create .container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---------------------------------------------------------
+   3. Breadcrumb
+   --------------------------------------------------------- */
+.booking-breadcrumb {
+    padding: 2.5rem 0 0.5rem;   /* clears fixed header */
+    font-size: 0.85rem;
+}
+
+.booking-breadcrumb .container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.booking-breadcrumb .container::-webkit-scrollbar { display: none; }
+
+.booking-breadcrumb .breadcrumb {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    align-items: center;
+    gap: 0.35rem;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.booking-breadcrumb .breadcrumb-item {
+    color: var(--sh-muted);
+}
+
+.booking-breadcrumb .breadcrumb-item a {
+    color: var(--sh-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+.booking-breadcrumb .breadcrumb-item a:hover { color: var(--sh-primary); }
+
+.booking-breadcrumb .breadcrumb-item.active {
+    color: var(--sh-primary);
+    font-weight: 600;
+}
+
+.booking-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: "›";
+    color: var(--sh-border-strong);
+    padding: 0 0.15rem;
+}
+
+/* ---------------------------------------------------------
+   4. Intro / Hero
+   --------------------------------------------------------- */
+.booking-intro {
+    padding: 1.5rem 0 2rem;
+    position: relative;
+}
+
+.booking-intro-inner {
+    position: relative;
+    background:
+        radial-gradient(circle at 100% 0%, var(--sh-primary-soft) 0%, transparent 55%),
+        radial-gradient(circle at 0% 100%, #f0f4ff 0%, transparent 45%),
+        #ffffff;
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius-xl);
+    padding: 2rem 2rem;
+    box-shadow: var(--sh-shadow-sm);
+    overflow: hidden;
+}
+
+.booking-intro-inner::after {
+    content: "";
+    position: absolute;
+    inset: -40% -20% auto auto;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, var(--sh-primary-glow), transparent 70%);
+    pointer-events: none;
+}
+
+.booking-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    background: var(--sh-primary-soft);
+    color: var(--sh-primary);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.85rem;
+}
+
+.booking-heading {
+    font-family: var(--sh-font-head);
+    font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+    font-weight: 800;
+    color: var(--sh-text);
+    letter-spacing: -0.015em;
+    margin: 0 0 0.5rem;
+    line-height: 1.2;
+}
+
+.booking-subheading {
+    font-size: 0.95rem;
+    color: var(--sh-muted);
+    max-width: 640px;
+    margin: 0;
+    line-height: 1.55;
+}
+
+/* ---------------------------------------------------------
+   5. Booking layout
+   --------------------------------------------------------- */
+.booking-section {
+    padding-top: 0.5rem;
+}
+
+.booking-section .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 1.5rem;
+}
+
+/* ---------------------------------------------------------
+   6. Selected Service Card (Summary)
+   --------------------------------------------------------- */
+.booking-summary-card {
+    background: var(--sh-card);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius-xl);
+    box-shadow: var(--sh-shadow-md);
+    padding: 1.75rem 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.booking-summary-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sh-primary), var(--sh-primary-dark));
+}
+
+@media (hover: hover) {
+    .booking-summary-card:hover {
+        box-shadow: var(--sh-shadow-lg);
+        transform: translateY(-2px);
+    }
+}
+
+.summary-card-header {
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--sh-border);
+    margin-bottom: 0.25rem;
+}
+
+.summary-card-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sh-primary);
+    background: var(--sh-primary-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+}
+
+.summary-card-title {
+    font-family: var(--sh-font-head);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--sh-text);
+    letter-spacing: -0.01em;
+    margin: 0 0 0.5rem;
+    line-height: 1.25;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+.summary-card-category {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--sh-muted);
+    font-weight: 500;
+}
+.summary-card-category i { color: var(--sh-primary); }
+
+.summary-card-body {
+    padding: 0.75rem 0;
+    flex: 1 1 auto;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px dashed var(--sh-border);
+}
+.summary-row:last-child { border-bottom: 0; }
+
+.summary-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--sh-muted);
+    font-weight: 500;
+}
+.summary-label i { color: var(--sh-primary); font-size: 0.9rem; }
+
+.summary-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--sh-text);
+    text-align: right;
+    word-break: break-word;
+}
+
+.summary-value-price {
+    font-family: var(--sh-font-head);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--sh-primary);
+    letter-spacing: -0.01em;
+    line-height: 1;
+}
+
+.summary-value-verified {
+    color: var(--sh-success);
+    background: var(--sh-success-soft);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.summary-card-footer {
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--sh-border);
+    margin-top: 0.5rem;
+}
+
+.summary-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.trust-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.7rem;
+    background: #f4f3fb;
+    color: var(--sh-text);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid var(--sh-border);
+    transition: background 0.15s ease, color 0.15s ease;
+}
+.trust-pill i { color: var(--sh-primary); font-size: 0.8rem; }
+.trust-pill:hover {
+    background: var(--sh-primary-soft);
+    color: var(--sh-primary);
+}
+
+/* ---------------------------------------------------------
+   7. Booking Form Card
+   --------------------------------------------------------- */
+.booking-form-card {
+    background: var(--sh-card);
+    border: 1px solid var(--sh-border);
+    border-radius: var(--sh-radius-xl);
+    box-shadow: var(--sh-shadow-md);
+    padding: 1.75rem 1.5rem;
+    transition: box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+    .booking-form-card:hover {
+        box-shadow: var(--sh-shadow-lg);
+    }
+}
+
+.form-card-header {
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--sh-border);
+    margin-bottom: 1.5rem;
+}
+
+.form-card-title {
+    font-family: var(--sh-font-head);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--sh-text);
+    letter-spacing: -0.01em;
+    margin: 0 0 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.form-card-title::before {
+    content: "";
+    width: 6px;
+    height: 20px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, var(--sh-primary), var(--sh-primary-dark));
+}
+
+.form-card-desc {
+    font-size: 0.88rem;
+    color: var(--sh-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ---------------------------------------------------------
+   8. Form controls
+   --------------------------------------------------------- */
+.booking-form .form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--sh-text);
+    margin-bottom: 0.4rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.booking-form .required {
+    color: var(--sh-danger);
+    font-weight: 700;
+}
+
+.booking-form .optional {
+    color: var(--sh-muted);
+    font-weight: 400;
+    font-size: 0.78rem;
+}
+
+.input-icon-wrap {
+    position: relative;
+}
+
+.input-icon-wrap .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.95rem;
+    transform: translateY(-50%);
+    color: var(--sh-muted);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: color 0.15s ease;
+}
+
+.booking-form .form-control-premium {
+    width: 100%;
+    font-family: var(--sh-font-body);
+    font-size: 0.95rem;
+    color: var(--sh-text);
+    background: #ffffff;
+    border: 1.5px solid var(--sh-border);
+    border-radius: var(--sh-radius-md);
+    padding: 0.85rem 1rem;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    min-height: 48px;
+    box-shadow: none;
+}
+
+.input-icon-wrap .form-control-premium {
+    padding-left: 2.65rem;
+}
+
+.booking-form textarea.form-control-premium {
+    resize: vertical;
+    min-height: 96px;
+    line-height: 1.55;
+    padding-top: 0.85rem;
+}
+
+.booking-form .form-control-premium::placeholder {
+    color: #a4a7b5;
+}
+
+.booking-form .form-control-premium:hover {
+    border-color: var(--sh-border-strong);
+}
+
+.booking-form .form-control-premium:focus {
+    outline: none;
+    border-color: var(--sh-primary);
+    box-shadow: 0 0 0 4px var(--sh-primary-glow);
+    background: #ffffff;
+}
+
+.input-icon-wrap:focus-within .input-icon {
+    color: var(--sh-primary);
+}
+
+/* ---------------------------------------------------------
+   9. Validation alert
+   --------------------------------------------------------- */
+.booking-form .alert-danger {
+    background: var(--sh-danger-soft);
+    border: 1px solid var(--sh-danger-border);
+    border-left: 4px solid var(--sh-danger);
+    border-radius: var(--sh-radius-md);
+    color: #7f1d1d;
+    padding: 1rem 1.1rem;
+    font-size: 0.9rem;
+    box-shadow: var(--sh-shadow-sm);
+}
+
+.booking-form .alert-danger strong {
+    display: block;
+    font-weight: 700;
+    color: var(--sh-danger);
+    margin-bottom: 0.35rem;
+    font-size: 0.95rem;
+}
+
+.booking-form .alert-danger ul {
+    padding-left: 1.1rem;
+}
+.booking-form .alert-danger li {
+    margin-bottom: 0.2rem;
+    line-height: 1.5;
+}
+
+/* ---------------------------------------------------------
+   10. Confirm Booking CTA
+   --------------------------------------------------------- */
+.booking-form-actions {
+    margin-top: 1.75rem;
+    display: flex;
+    justify-content: stretch;
+}
+
+.btn-confirm-booking {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.5rem;
+    min-height: 54px;
+    font-family: var(--sh-font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--sh-primary), var(--sh-primary-dark));
+    border: 0;
+    border-radius: var(--sh-radius-md);
+    box-shadow: 0 10px 24px -8px var(--sh-primary-glow),
+                0 4px 12px rgba(109, 94, 252, 0.18);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-confirm-booking i { font-size: 1.15rem; }
+
+.btn-confirm-booking:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px -8px var(--sh-primary-glow),
+                0 6px 16px rgba(109, 94, 252, 0.24);
+    filter: brightness(1.03);
+    color: #ffffff;
+}
+
+.btn-confirm-booking:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px -4px var(--sh-primary-glow);
+}
+
+.btn-confirm-booking:focus-visible {
+    outline: 3px solid var(--sh-primary-glow);
+    outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------
+   11. Form note
+   --------------------------------------------------------- */
+.booking-form-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 1rem 0 0;
+    font-size: 0.82rem;
+    color: var(--sh-muted);
+    line-height: 1.55;
+}
+
+.booking-form-note i {
+    color: var(--sh-primary);
+    font-size: 0.95rem;
+    margin-top: 0.1rem;
+    flex: 0 0 auto;
+}
+
+/* ---------------------------------------------------------
+   12. Responsive
+   --------------------------------------------------------- */
+
+/* Tablets and below */
+@media (max-width: 991.98px) {
+    .booking-breadcrumb {
+        padding-top: 4.75rem;
+    }
+
+    .booking-intro { padding: 1rem 0 1.5rem; }
+
+    .booking-intro-inner {
+        padding: 1.5rem 1.25rem;
+        border-radius: var(--sh-radius-lg);
+    }
+
+    .booking-summary-card,
+    .booking-form-card {
+        padding: 1.5rem 1.25rem;
+        border-radius: var(--sh-radius-lg);
+    }
+
+    /* Form first, summary second on mobile */
+    .booking-section .order-lg-1 { order: 1 !important; }
+    .booking-section .order-lg-2 { order: 2 !important; }
+}
+
+/* Phones */
+@media (max-width: 575.98px) {
+    .servicehub-booking-create {
+        padding-bottom: 2.5rem;
+    }
+
+    .booking-breadcrumb {
+        padding-top: 4.25rem;
+        font-size: 0.78rem;
+    }
+    .booking-breadcrumb .breadcrumb { font-size: 0.78rem; }
+
+    .booking-intro-inner {
+        padding: 1.25rem 1.1rem;
+        border-radius: var(--sh-radius-lg);
+    }
+
+    .booking-heading {
+        font-size: clamp(1.35rem, 6vw, 1.7rem);
+    }
+    .booking-subheading { font-size: 0.88rem; }
+
+    .booking-summary-card,
+    .booking-form-card {
+        padding: 1.25rem 1.1rem;
+        border-radius: var(--sh-radius-lg);
+    }
+
+    .form-card-title { font-size: 1.1rem; }
+
+    .summary-card-title { font-size: 1.15rem; }
+
+    .summary-value-price { font-size: 1.35rem; }
+
+    .btn-confirm-booking {
+        font-size: 0.95rem;
+        padding: 0.9rem 1rem;
+        min-height: 52px;
+    }
+}
+
+/* Tiny phones (320–360) */
+@media (max-width: 360px) {
+    .servicehub-booking-create .container {
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+    }
+
+    .booking-summary-card,
+    .booking-form-card {
+        padding: 1rem 0.9rem;
+    }
+
+    .summary-value-price { font-size: 1.25rem; }
+
+    .trust-pill {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.55rem;
+    }
+}
+
+/* Desktop: keep two-column balance */
+@media (min-width: 992px) {
+    .booking-form-card {
+        padding: 2rem 1.75rem;
+    }
+    .booking-summary-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* ---------------------------------------------------------
+   13. Accessibility
+   --------------------------------------------------------- */
+.servicehub-booking-create a:focus-visible,
+.servicehub-booking-create button:focus-visible,
+.servicehub-booking-create input:focus-visible,
+.servicehub-booking-create textarea:focus-visible {
+    outline: 3px solid var(--sh-primary-glow);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .servicehub-booking-create *,
+    .servicehub-booking-create *::before,
+    .servicehub-booking-create *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
